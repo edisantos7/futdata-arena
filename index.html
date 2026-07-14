@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#02070c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FUTDATA Arena">
+  <title>FUTDATA Arena — 3v3 Offline</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game" id="game" aria-label="FUTDATA Arena, futebol 3 contra 3 offline">
+      <canvas id="canvas" width="1600" height="900"></canvas>
+
+      <header class="topbar">
+        <div class="brand"><b>F</b><span><strong>FUTDATA</strong><small>ARENA</small></span></div>
+        <div class="scoreboard">
+          <div class="team blue"><small>NEON FC</small><strong id="blueScore">0</strong></div>
+          <div class="clock"><span id="clock">02:00</span><small id="phaseLabel">JOGO</small></div>
+          <div class="team red"><strong id="redScore">0</strong><small>VORTEX</small></div>
+        </div>
+        <div class="match-meta"><span><i></i> OFFLINE</span><b>IA INTERMÉDIA</b></div>
+      </header>
+
+      <aside class="possession">
+        <span>POSSE</span><div><i id="possessionBar"></i></div><b id="possessionText">50 / 50</b>
+      </aside>
+
+      <div class="event-banner" id="eventBanner">
+        <small id="eventSmall">FUTDATA ARENA</small>
+        <strong id="eventTitle">KICK OFF</strong>
+        <span id="eventSub">DOMINA O CAMPO</span>
+      </div>
+
+      <div class="controls-hint" id="controlsHint">
+        <div><kbd>WASD</kbd><span>MOVER</span></div>
+        <div><kbd>ESPAÇO</kbd><span>CARREGAR / REMATAR</span></div>
+        <div><kbd>SHIFT</kbd><span>SPRINT</span></div>
+        <div><kbd>P</kbd><span>PAUSA</span></div>
+      </div>
+
+      <div class="charge" id="chargeMeter"><span>REMATE</span><div><i id="chargeFill"></i></div><b id="chargeValue">0%</b></div>
+
+      <nav class="utilities" aria-label="Opções">
+        <button id="soundBtn" aria-label="Ligar ou desligar som">♪</button>
+        <button id="fullscreenBtn" aria-label="Ecrã inteiro">⛶</button>
+      </nav>
+
+      <div class="touch-controls" aria-hidden="true">
+        <div class="joystick" id="joystick"><i id="joystickNub"></i></div>
+        <button class="kick-button" id="kickButton"><b>REMATAR</b><span>SEGURA</span></button>
+      </div>
+
+      <div class="overlay" id="startOverlay">
+        <div class="start-card">
+          <div class="eyebrow"><i></i> FUTDATA INTERACTIVE</div>
+          <div class="hero-title"><small>APRESENTA</small><h1>ARENA<br><em>3V3</em></h1></div>
+          <p>Futebol arcade ultrarrápido, física precisa e inteligência artificial equilibrada. Tu és o capitão — os restantes cinco jogadores pensam, defendem, passam e rematam sozinhos.</p>
+          <div class="features">
+            <div><span>01</span><strong>3 CONTRA 3</strong><small>Tu + 5 bots</small></div>
+            <div><span>02</span><strong>INTERMÉDIO</strong><small>IA competitiva</small></div>
+            <div><span>03</span><strong>2 MINUTOS</strong><small>Ritmo total</small></div>
+          </div>
+          <button class="primary" id="startBtn"><span>ENTRAR NA ARENA</span><b>→</b></button>
+          <button class="install-button" id="installBtn" hidden><span>INSTALAR NO TELEMÓVEL</span><b>+</b></button>
+          <footer><span>SEM INTERNET</span><span>RATO · TECLADO · TOQUE</span><span>ÁUDIO DINÂMICO</span></footer>
+        </div>
+      </div>
+
+      <div class="overlay hidden" id="endOverlay">
+        <div class="end-card">
+          <div class="eyebrow"><i></i> APITO FINAL</div>
+          <div class="result-icon" id="resultIcon">W</div>
+          <h2 id="resultTitle">VITÓRIA!</h2>
+          <p id="resultMessage">Controlaste o ritmo e conquistaste a arena.</p>
+          <div class="final-result"><span>NEON FC</span><strong id="finalResult">3 — 1</strong><span>VORTEX</span></div>
+          <div class="stats">
+            <div><b id="shotsStat">0</b><small>REMATES</small></div>
+            <div><b id="possessionStat">50%</b><small>POSSE</small></div>
+            <div><b id="passesStat">0</b><small>PASSES</small></div>
+          </div>
+          <button class="primary" id="restartBtn"><span>JOGAR NOVAMENTE</span><b>↻</b></button>
+        </div>
+      </div>
+
+      <div class="pause hidden" id="pauseOverlay"><small>JOGO EM PAUSA</small><strong>PAUSA</strong><span>Carrega P para continuar</span></div>
+      <div class="rotate"><b>↻</b><strong>RODA O TELEMÓVEL</strong><span>O FUTDATA Arena foi desenhado para jogar na horizontal</span></div>
+    </section>
+  </main>
+  <script src="game.js?v=1.4-mobile-web"></script>
+</body>
+</html>
