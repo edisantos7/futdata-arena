@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <radialGradient id="night" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#153745"/>
+      <stop offset=".58" stop-color="#07141d"/>
+      <stop offset="1" stop-color="#010307"/>
+    </radialGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#176f43"/>
+      <stop offset=".5" stop-color="#21864a"/>
+      <stop offset="1" stop-color="#105d39"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#54efff" stop-opacity=".85"/>
+      <stop offset=".45" stop-color="#123846" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#54efff" stop-opacity=".7"/>
+    </linearGradient>
+    <pattern id="crowd" width="15" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="1.5" fill="#e8fbff" opacity=".34"/>
+      <circle cx="10" cy="8" r="1.2" fill="#54efff" opacity=".5"/>
+      <circle cx="14" cy="2" r=".8" fill="#c8ff2e" opacity=".3"/>
+      <circle cx="6" cy="12" r=".9" fill="#ff8c62" opacity=".32"/>
+    </pattern>
+    <pattern id="stripes" width="160" height="20" patternUnits="userSpaceOnUse">
+      <rect width="80" height="20" fill="#fff" opacity=".025"/>
+      <rect x="80" width="80" height="20" fill="#00180e" opacity=".04"/>
+    </pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="35"/></filter>
+    <clipPath id="pitch"><path d="M300 145H1367Q1395 145 1395 173V760Q1395 788 1367 788H300Q272 788 272 760V173Q272 145 300 145Z"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#night)"/>
+  <ellipse cx="800" cy="450" rx="720" ry="420" fill="#0d3442" opacity=".5" filter="url(#soft)"/>
+  <path d="M75 55H1525L1590 160V740L1515 850H85L10 740V160Z" fill="#02080d" stroke="#153c4a" stroke-width="12"/>
+  <path d="M105 78H1495L1550 175V725L1485 820H115L50 725V175Z" fill="url(#crowd)" opacity=".95"/>
+  <path d="M205 100H1395L1485 205V695L1380 798H220L115 695V205Z" fill="#06131a" stroke="url(#rim)" stroke-width="6"/>
+  <path d="M265 125H1402L1420 150V790L1395 815H275L248 790V150Z" fill="#020609" stroke="#2e6270" stroke-width="8"/>
+  <g clip-path="url(#pitch)">
+    <rect x="270" y="140" width="1130" height="655" fill="url(#grass)"/>
+    <rect x="270" y="140" width="1130" height="655" fill="url(#stripes)"/>
+    <path d="M270 190H1400M270 275H1400M270 360H1400M270 445H1400M270 530H1400M270 615H1400M270 700H1400" stroke="#b8ffca" stroke-opacity=".022" stroke-width="38"/>
+    <ellipse cx="820" cy="470" rx="500" ry="310" fill="#9affae" opacity=".035"/>
+  </g>
+  <path d="M300 145H1367Q1395 145 1395 173V760Q1395 788 1367 788H300Q272 788 272 760V173Q272 145 300 145Z" fill="none" stroke="#83d9e6" stroke-opacity=".45" stroke-width="8"/>
+  <g fill="#54efff" opacity=".55" filter="url(#glow)">
+    <rect x="230" y="110" width="1180" height="8" rx="4"/>
+    <rect x="230" y="815" width="1180" height="8" rx="4"/>
+    <rect x="185" y="180" width="8" height="540" rx="4"/>
+    <rect x="1462" y="180" width="8" height="540" rx="4"/>
+  </g>
+  <g fill="#dffcff">
+    <circle cx="240" cy="115" r="5"/><circle cx="430" cy="115" r="5"/><circle cx="620" cy="115" r="5"/><circle cx="810" cy="115" r="5"/><circle cx="1000" cy="115" r="5"/><circle cx="1190" cy="115" r="5"/><circle cx="1380" cy="115" r="5"/>
+    <circle cx="240" cy="820" r="5"/><circle cx="430" cy="820" r="5"/><circle cx="620" cy="820" r="5"/><circle cx="810" cy="820" r="5"/><circle cx="1000" cy="820" r="5"/><circle cx="1190" cy="820" r="5"/><circle cx="1380" cy="820" r="5"/>
+  </g>
+  <path d="M0 0H1600V900H0Z" fill="none" stroke="#000" stroke-opacity=".72" stroke-width="55"/>
+</svg>
